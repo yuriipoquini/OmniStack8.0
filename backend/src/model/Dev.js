@@ -23,7 +23,7 @@ const DevSchema = new Schema({
         ref: 'Dev'
     }],
     
-    deslikes: [{
+    dislikes: [{
         type: Schema.Types.ObjectId,
         ref: 'Dev'
     }]
