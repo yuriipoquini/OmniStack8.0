@@ -24,6 +24,15 @@ export default function Main({ match }) {
         loadUsers();
     }, [match.params.id]);
 
+
+    async function handleLike(id){
+
+    }
+
+    async function handleDislike(id) {
+
+    }
+
     return (
 
         <div className="main-container">
@@ -39,11 +48,11 @@ export default function Main({ match }) {
                         </footer>
 
                         <div className="buttons">
-                            <button type="button">
+                            <button type="button" onClick={() => handleDislike(user._id())}>
                                 <img src={dislike} alt="Dislike" />
                             </button>
 
-                            <button type="button">
+                            <button type="button" onClick={() => handleLike(user._id())}>
                                 <img src={like} alt="Like" />
                             </button>
                         </div>
