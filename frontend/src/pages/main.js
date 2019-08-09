@@ -26,11 +26,15 @@ export default function Main({ match }) {
 
 
     async function handleLike(id){
-
+        await api.post(`/devs/${id}/likes`, null, {
+            headers: {user:match.params.id}
+        })
     }
 
     async function handleDislike(id) {
-
+        await api.post(`/devs/${id}/dislikes`, null, {
+            headers: {user: match.params.id}
+        });
     }
 
     return (
@@ -48,11 +52,11 @@ export default function Main({ match }) {
                         </footer>
 
                         <div className="buttons">
-                            <button type="button" onClick={() => handleDislike(user._id())}>
+                            <button type="button" onClick={() => handleDislike(user._id)}>
                                 <img src={dislike} alt="Dislike" />
                             </button>
 
-                            <button type="button" onClick={() => handleLike(user._id())}>
+                            <button type="button" onClick={() => handleLike(user._id)}>
                                 <img src={like} alt="Like" />
                             </button>
                         </div>
