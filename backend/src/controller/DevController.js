@@ -26,6 +26,8 @@ module.exports = {
 
         if(userExists){
             return res.json(userExists);
+        } else {
+            console.log('User already created!')
         }
 
         const response = await axios.get(`https://api.github.com/users/${username}`);
